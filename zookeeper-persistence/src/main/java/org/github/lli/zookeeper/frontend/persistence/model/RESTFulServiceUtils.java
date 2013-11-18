@@ -38,8 +38,10 @@ public class RESTFulServiceUtils {
 					.getResourceAsStream(CURATOR_PROPERTIES_FILE));
 			int maxRetries = Integer.parseInt(props.getProperty(MAX_RETRIES));
 			RetryPolicy policy = new ExponentialBackoffRetry(1000, maxRetries);
-			client = CuratorFrameworkFactory.newClient(
-					props.getProperty(CONNECTION_STRING), policy);
+			String connectionString = props.getProperty(CONNECTION_STRING);
+			client = CuratorFrameworkFactory
+					.newClient(connectionString, policy);
+			client.start();
 		} catch (IOException e) {
 			logger.fatal("Failed to load " + CURATOR_PROPERTIES_FILE);
 		}

@@ -22,8 +22,8 @@ public class ZNodeController {
 		try {
 			List<String> nodes = RESTFulServiceUtils.getCuratorFramework()
 					.getChildren().forPath("/");
-			for(String s: nodes)
-				System.out.println(s);
+			for(String node : nodes)
+				System.out.println(node);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
