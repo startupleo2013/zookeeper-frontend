@@ -12,6 +12,9 @@
 	<packaging>war</packaging>
 	<name>zookeeper-ui Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+	<properties>
+		<springframework.version>3.1.4.RELEASE</springframework.version>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -24,6 +27,11 @@
 			<artifactId>primefaces</artifactId>
 			<version>4.0</version>
 		</dependency>
+		<dependency>
+			<groupId>org.primefaces.themes</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>1.0.10</version>
+		</dependency>
 		<!-- JSF 2 API -->
 		<dependency>
 			<groupId>com.sun.faces</groupId>
@@ -31,18 +39,46 @@
 			<version>2.2.4</version>
 		</dependency>
 		<dependency>
-            <groupId>com.sun.faces</groupId>
-            <artifactId>jsf-impl</artifactId>
-            <version>2.2.4</version>
-        </dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-impl</artifactId>
+			<version>2.2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- JSTL -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
 	</dependencies>
 	<repositories>
-     <repository>
-         <id>primefaces-repository</id>
-         <name>Primefaces repository</name>
-         <url>http://repository.primefaces.org</url>
-     </repository>
- </repositories>
+		<repository>
+			<id>primefaces-repository</id>
+			<name>Primefaces repository</name>
+			<url>http://repository.primefaces.org</url>
+		</repository>
+	</repositories>
 	<build>
 		<finalName>zookeeper-ui</finalName>
 	</build>
